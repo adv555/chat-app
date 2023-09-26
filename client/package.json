@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": ".",
+  "homepage": "https://chat-app-client-ochre.vercel.app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
