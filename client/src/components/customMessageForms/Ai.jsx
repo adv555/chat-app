@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MessageFormUi } from './MessageFormUi';
-import { usePostAiTextMutation } from '../../state/api';
+import { usePostAiTextMutation } from '@/state/api';
 
 const getDate = (date) => {
   const newDate = date

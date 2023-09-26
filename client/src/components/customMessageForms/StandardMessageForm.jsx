@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageFormUi } from './MessageFormUi';
+import { MessageFormUi } from '@/components/customMessageForms/MessageFormUi';
 
 const getDate = (date) => {
   const newDate = date

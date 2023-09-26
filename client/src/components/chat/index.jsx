@@ -4,10 +4,9 @@ import {
   MultiChatSocket,
   MultiChatWindow,
 } from 'react-chat-engine-advanced';
-
-import { Ai } from '../customMessageForms/Ai';
-import { Header } from '../customChatHeader';
-import { StandardMessageForm } from '../customMessageForms/StandardMessageForm';
+import { Header } from '@/components/customChatHeader';
+import { StandardMessageForm } from '@/components/customMessageForms/StandardMessageForm';
+import { Ai } from '@/components/customMessageForms/Ai';
 
 export const Chat = () => {
   const chatProps = useMultiChatLogic(

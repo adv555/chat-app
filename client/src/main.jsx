@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import App from './App.jsx';
-import { api } from './state/api.js';
+import { api } from '@/state/api.js';
 import './index.scss';
 
 export const store = configureStore({

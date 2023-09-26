@@ -8,4 +8,11 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
+  build: {
+    outDir: 'build',
+    manifest: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
 });

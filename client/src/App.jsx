@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Chat } from './components/chat';
+import { Chat } from '@/components/chat';
 
 function App() {
   return (
