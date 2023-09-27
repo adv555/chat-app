@@ -30,6 +30,10 @@ export const openai = new OpenAI({
 });
 
 /* ROUTES SECTION */
+app.use('/', (req, res) => {
+  res.send('Welcome to the OpenAI API');
+});
+
 app.use('/openai', openAiRoutes);
 
 /* SERVER SETUP */
