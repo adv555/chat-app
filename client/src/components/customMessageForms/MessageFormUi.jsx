@@ -11,6 +11,8 @@ export const MessageFormUi = ({
   message,
   handleChange,
   handleSubmit,
+  appendText,
+  handleKeyDown,
 }) => {
   const [preview, setPreview] = useState('');
 
@@ -40,8 +42,18 @@ export const MessageFormUi = ({
             type="text"
             value={message}
             onChange={handleChange}
+            onKeyDown={handleKeyDown}
             placeholder="Type a message..."
           />
+
+          {appendText && (
+            <input
+              className="message-form-assist"
+              type="text"
+              disabled
+              value={`${message} ${appendText}`}
+            />
+          )}
         </div>
         <div className="message-form-icons">
           <Dropzone
