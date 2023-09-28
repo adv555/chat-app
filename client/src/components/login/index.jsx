@@ -9,7 +9,8 @@ export const Login = ({ setUser, setSecret }) => {
 
   const [triggerLogin, resultLogin] = usePostLoginMutation();
 
-  const [triggerSignUp] = usePostSignUpMutation();
+  const [triggerSignUp, resultSignUp] = usePostSignUpMutation();
+  console.log('🚀 ~ file: index.jsx:13 ~ Login ~ resultSignUp:', resultSignUp);
 
   const handleLogin = () => {
     triggerLogin({ username, password });
@@ -28,6 +29,17 @@ export const Login = ({ setUser, setSecret }) => {
       setError('Credentials are not correct. Please try again.');
     }
   }, [resultLogin.isError, resultLogin.data]); // eslint-disable-line
+
+  useEffect(() => {
+    if (resultSignUp.data?.response) {
+      setUser(username);
+      setSecret(password);
+    }
+
+    if (resultSignUp.isError) {
+      setError('Credentials are not correct. Please try again.');
+    }
+  }, [resultSignUp.isError, resultSignUp.data]); // eslint-disable-line
 
   return (
     <div className="login-page">

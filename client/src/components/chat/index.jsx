@@ -13,7 +13,7 @@ import { AiAssist } from '@/components/customMessageForms/AiAssist';
 export const Chat = ({ user, secret }) => {
   // const chatProps = useMultiChatLogic(
   //   import.meta.env.VITE_PROJECT_ID,
-  //   'testUser',
+  //   'admin',
   //   '1234',
   // );
 
