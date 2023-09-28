@@ -1,54 +1,10 @@
 import express from 'express';
-import axios from 'axios';
-
-const CHAT_ENGINE_BASE_URL = process.env.CHAT_ENGINE_BASE_URL;
+import { authController } from '../controllers/auth.controller.js';
 
 const router = express.Router();
 
-router.post('/login', async (req, res) => {
-  try {
-    const { username, password } = req.body;
+router.post('/login', authController.login);
 
-    const chatEngineResponse = await axios.get(
-      `${CHAT_ENGINE_BASE_URL}/users/me`,
-      {
-        headers: {
-          'Project-ID': process.env.PROJECT_ID,
-          'User-Name': username,
-          'User-Secret': password,
-        },
-      },
-    );
-
-    res.status(200).json({ response: chatEngineResponse.data });
-  } catch (error) {
-    console.error('error', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-router.post('/signup', async (req, res) => {
-  try {
-    const { username, password } = req.body;
-
-    const chatEngineResponse = await axios.post(
-      `${CHAT_ENGINE_BASE_URL}/users/`,
-      {
-        username,
-        secret: password,
-      },
-      {
-        headers: {
-          'Private-Key': process.env.CHAT_ENGINE_PRIVATE_KEY,
-        },
-      },
-    );
-
-    res.status(200).json({ response: chatEngineResponse.data });
-  } catch (error) {
-    console.error('error', error.message);
-    res.status(500).json({ error: error.message });
-  }
-});
+router.post('/signup', authController.signup);
 
 export default router;
