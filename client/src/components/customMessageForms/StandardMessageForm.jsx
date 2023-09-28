@@ -11,9 +11,6 @@ const getDate = (date) => {
 };
 
 export const StandardMessageForm = ({ props, activeChat }) => {
-  console.log(' activeChat:', activeChat);
-  console.log('props:', props);
-
   const [message, setMessage] = useState('');
   const [attachment, setAttachments] = useState('');
 

@@ -26,6 +26,20 @@ export const api = createApi({
         body: payload,
       }),
     }),
+    postLogin: builder.mutation({
+      query: (payload) => ({
+        url: 'auth/login',
+        method: 'POST',
+        body: payload,
+      }),
+    }),
+    postSignUp: builder.mutation({
+      query: (payload) => ({
+        url: 'auth/signup',
+        method: 'POST',
+        body: payload,
+      }),
+    }),
   }),
 });
 
@@ -33,4 +47,6 @@ export const {
   usePostAiTextMutation,
   usePostAiCodeMutation,
   usePostAiAssistMutation,
+  usePostLoginMutation,
+  usePostSignUpMutation,
 } = api;

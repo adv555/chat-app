@@ -13,6 +13,7 @@ $secondary-800: #00b5e0;
 $tertiary-50: #fff8e6;
 $tertiary-100: #fff1cd;
 $quaternary-500: #fb8500;
+$alert: red;
 
 html,
 body,
@@ -60,10 +61,34 @@ body,
   color: $tertiary-50;
 }
 
+.login-container .title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 .login-actions {
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 40px;
+
+  margin: 10px 0;
+}
+
+.login-actions > button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+
+  color: $tertiary-50;
+  font-size: medium;
+
+  background-color: $secondary-500;
 }
 
 .login-input {
@@ -79,6 +104,7 @@ body,
 }
 
 .register-change {
+  text-align: right;
   text-decoration: underline;
   color: $secondary-500;
 }
@@ -549,4 +575,10 @@ body,
 
 ::-webkit-scrollbar-track:hover {
   background: $primary-700;
+}
+
+.error-message {
+  color: $alert;
+  font-size: '1.2rem';
+  text-align: 'center';
 }

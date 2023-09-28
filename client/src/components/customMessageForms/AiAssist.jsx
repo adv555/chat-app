@@ -49,8 +49,6 @@ export const AiAssist = ({ props, activeChat }) => {
       activeChatId: activeChat.id,
     };
 
-    console.log('VITE_BASE_URL:', import.meta.VITE_BASE_URL);
-
     props.onSubmit(form);
     // trigger(form);
     setMessage('');

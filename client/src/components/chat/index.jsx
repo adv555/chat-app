@@ -10,12 +10,19 @@ import { Ai } from '@/components/customMessageForms/Ai';
 import { AiCode } from '@/components/customMessageForms/AiCode';
 import { AiAssist } from '@/components/customMessageForms/AiAssist';
 
-export const Chat = () => {
+export const Chat = ({ user, secret }) => {
+  // const chatProps = useMultiChatLogic(
+  //   import.meta.env.VITE_PROJECT_ID,
+  //   'testUser',
+  //   '1234',
+  // );
+
   const chatProps = useMultiChatLogic(
     import.meta.env.VITE_PROJECT_ID,
-    'testUser',
-    '1234',
+    user,
+    secret,
   );
+
   return (
     <div style={{ flexBasis: '100%' }}>
       <MultiChatSocket {...chatProps} />

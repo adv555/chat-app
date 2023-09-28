@@ -61,7 +61,6 @@ export const MessageFormUi = ({
             multiple={false}
             onClick={true}
             onDrop={(acceptedFiles) => {
-              console.log('onDrop');
               setAttachments(acceptedFiles[0]);
               setPreview(URL.createObjectURL(acceptedFiles[0]));
             }}
