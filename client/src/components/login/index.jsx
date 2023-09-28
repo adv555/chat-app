@@ -10,7 +10,6 @@ export const Login = ({ setUser, setSecret }) => {
   const [triggerLogin, resultLogin] = usePostLoginMutation();
 
   const [triggerSignUp, resultSignUp] = usePostSignUpMutation();
-  console.log('🚀 ~ file: index.jsx:13 ~ Login ~ resultSignUp:', resultSignUp);
 
   const handleLogin = () => {
     triggerLogin({ username, password });

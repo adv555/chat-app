@@ -21,10 +21,6 @@ export const StandardMessageForm = ({ props, activeChat }) => {
       text: message,
       activeChatId: activeChat.id,
     };
-    console.log(
-      '🚀 ~ file: StandardMessageForm.jsx:33 ~ handleSubmit ~ form:',
-      form,
-    );
 
     props.onSubmit(form);
     setMessage('');

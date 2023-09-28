@@ -58,7 +58,6 @@ export const AiAssist = ({ props, activeChat }) => {
 
   const handleKeyDown = (event) => {
     // handle tab and arrow right
-    console.log(event.key);
 
     if (event.key === 'Tab' || event.key === 'ArrowRight') {
       event.preventDefault();

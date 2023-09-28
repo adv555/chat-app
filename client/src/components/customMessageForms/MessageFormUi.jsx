@@ -57,7 +57,7 @@ export const MessageFormUi = ({
         </div>
         <div className="message-form-icons">
           <Dropzone
-            acceptedFiles=".jpg,.jpeg,.png"
+            acceptedFiles=".jpg,.jpeg,.png,.webp"
             multiple={false}
             onClick={true}
             onDrop={(acceptedFiles) => {
@@ -66,7 +66,7 @@ export const MessageFormUi = ({
             }}
           >
             {({ getRootProps, getInputProps, open }) => (
-              <div {...getRootProps()}>
+              <div {...getRootProps()} onClick={(e) => e.stopPropagation()}>
                 <input {...getInputProps()} />
                 <PaperClipIcon
                   className="message-form-icon-clip"
