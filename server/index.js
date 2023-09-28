@@ -6,6 +6,7 @@ import helmet, { crossOriginResourcePolicy } from 'helmet';
 import morgan from 'morgan';
 import OpenAI from 'openai';
 import openAiRoutes from './routes/openai.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -35,6 +36,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/openai', openAiRoutes);
+app.use('/auth', authRoutes);
 
 /* SERVER SETUP */
 const PORT = process.env.PORT || 3002;

@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 import { openai } from '../index.js';
 
 dotenv.config();
+
+const CHAT_ENGINE_BASE_URL = process.env.CHAT_ENGINE_BASE_URL;
+
 const router = express.Router();
 
 router.post('/text', async (req, res) => {
@@ -19,7 +22,7 @@ router.post('/text', async (req, res) => {
     });
 
     await axios.post(
-      `https://api.chatengine.io/chats/${activeChatId}/messages/`,
+      `${CHAT_ENGINE_BASE_URL}/chats/${activeChatId}/messages/`,
       { text: response.choices[0].message.content },
       {
         headers: {
@@ -40,6 +43,11 @@ router.post('/text', async (req, res) => {
 router.post('/code', async (req, res) => {
   try {
     const { text, activeChatId } = req.body;
+    console.log(
+      '🚀 ~ file: openai.routes.js:46 ~ router.post ~ text, activeChatId :',
+      text,
+      activeChatId,
+    );
 
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
@@ -58,7 +66,7 @@ router.post('/code', async (req, res) => {
     );
 
     await axios.post(
-      `https://api.chatengine.io/chats/${activeChatId}/messages/`,
+      `${CHAT_ENGINE_BASE_URL}/chats/${activeChatId}/messages/`,
       { text: response.choices[0].message.content },
       {
         headers: {
