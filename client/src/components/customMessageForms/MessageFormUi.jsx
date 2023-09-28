@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   PaperAirplaneIcon,
   PaperClipIcon,
-  XMarkIcon,
+  XCircleIcon,
 } from '@heroicons/react/24/solid';
 import Dropzone from 'react-dropzone';
 
@@ -26,7 +26,7 @@ export const MessageFormUi = ({
             alt="message-form-preview"
             onLoad={() => URL.revokeObjectURL(preview)}
           />
-          <XMarkIcon
+          <XCircleIcon
             className="message-form-icon-x"
             onClick={() => {
               setPreview('');

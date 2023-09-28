@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MessageFormUi } from './MessageFormUi';
 import { usePostAiAssistMutation } from '@/state/api';
+import { getDate } from '@/utils/getDate';
 
 function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -17,15 +18,6 @@ function useDebounce(value, delay) {
 
   return debouncedValue;
 }
-
-const getDate = (date) => {
-  const newDate = date
-    .toISOString()
-    .replace('T', ' ')
-    .replace('Z', `${Math.floor(Math.random() * 1000)}+00:00`);
-
-  return newDate;
-};
 
 export const AiAssist = ({ props, activeChat }) => {
   const [message, setMessage] = useState('');
@@ -65,10 +57,17 @@ export const AiAssist = ({ props, activeChat }) => {
   }, [debouncedValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleKeyDown = (event) => {
-    // handle enter and tab
-    if (event.keyCode === 13 || event.keyCode === 9) {
+    // handle tab and arrow right
+    console.log(event.key);
+
+    if (event.key === 'Tab' || event.key === 'ArrowRight') {
       event.preventDefault();
       setMessage(`${message} ${appendText}`);
+    }
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSubmit();
     }
 
     setAppendText('');

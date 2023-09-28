@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { MessageFormUi } from '@/components/customMessageForms/MessageFormUi';
-
-const getDate = (date) => {
-  const newDate = date
-    .toISOString()
-    .replace('T', ' ')
-    .replace('Z', `${Math.floor(Math.random() * 1000)}+00:00`);
-
-  return newDate;
-};
+import { getDate } from '@/utils/getDate';
 
 export const StandardMessageForm = ({ props, activeChat }) => {
   const [message, setMessage] = useState('');
@@ -29,10 +21,21 @@ export const StandardMessageForm = ({ props, activeChat }) => {
       text: message,
       activeChatId: activeChat.id,
     };
+    console.log(
+      '🚀 ~ file: StandardMessageForm.jsx:33 ~ handleSubmit ~ form:',
+      form,
+    );
 
     props.onSubmit(form);
     setMessage('');
     setAttachments('');
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13 && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit();
+    }
   };
 
   return (
@@ -41,6 +44,7 @@ export const StandardMessageForm = ({ props, activeChat }) => {
       setAttachments={setAttachments}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
+      handleKeyDown={handleKeyDown}
     />
   );
 };

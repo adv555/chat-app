@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { MessageFormUi } from './MessageFormUi';
 import { usePostAiTextMutation } from '@/state/api';
-
-const getDate = (date) => {
-  const newDate = date
-    .toISOString()
-    .replace('T', ' ')
-    .replace('Z', `${Math.floor(Math.random() * 1000)}+00:00`);
-
-  return newDate;
-};
+import { getDate } from '@/utils/getDate';
 
 export const Ai = ({ props, activeChat }) => {
   const [message, setMessage] = useState('');
@@ -37,12 +29,21 @@ export const Ai = ({ props, activeChat }) => {
     setMessage('');
     setAttachments('');
   };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
     <MessageFormUi
       message={message}
       setAttachments={setAttachments}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
+      handleKeyDown={handleKeyDown}
     />
   );
 };

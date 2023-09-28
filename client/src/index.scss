@@ -13,7 +13,7 @@ $secondary-800: #00b5e0;
 $tertiary-50: #fff8e6;
 $tertiary-100: #fff1cd;
 $quaternary-500: #fb8500;
-$alert: red;
+$alert: #f03f20;
 
 html,
 body,
@@ -174,7 +174,8 @@ body,
   position: absolute;
   top: 0;
   right: 0;
-  color: $primary-500 !important;
+  // color: $primary-500 !important;
+  color: $alert !important;
   width: 15px !important;
   height: 15px !important;
   cursor: pointer;
