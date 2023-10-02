@@ -1,0 +1,94 @@
+@import '../../App.scss';
+
+.login-page {
+  // background-color: $primary-500;
+  // background-color: $colors-primary-dark;
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+      25.06% 25.06% at 21.51% 38.27%,
+      rgba(35, 123, 255, 0.2) 0%,
+      rgba(38, 125, 255, 0) 100%
+    ),
+    linear-gradient(0deg, rgba(40, 6, 94, 0.3), rgba(40, 6, 94, 0.3));
+}
+
+.login-container {
+  color: $tertiary-50;
+}
+
+.login-container .title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.login-actions {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+
+  margin: 10px 0;
+}
+
+.login-actions > button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+
+  color: $tertiary-50;
+  font-size: medium;
+
+  background-color: $colors-primary-purple;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colors-primary-violet;
+    // outline: none;
+  }
+}
+
+.login-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 10px 0;
+  background-color: $tertiary-50;
+  color: $primary-600;
+  outline-color: $colors-outline;
+  // background-color: $primary-600;
+  // color: $tertiary-50;
+}
+
+.register-change {
+  text-align: right;
+  text-decoration: underline;
+  // color: $secondary-500;
+  color: $colors-primary-purple;
+}
+
+.register-change:hover {
+  text-decoration: underline;
+  // color: $tertiary-100;
+  color: $colors-primary-violet;
+  cursor: pointer;
+}
+
+.error-message {
+  color: $alert;
+  font-size: '1.2rem';
+  text-align: 'center';
+}

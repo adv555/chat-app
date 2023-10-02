@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePostLoginMutation, usePostSignUpMutation } from '@/state/api';
+import './index.scss';
 
 export const Login = ({ setUser, setSecret }) => {
   const [isRegister, setIsRegister] = useState(false);
@@ -42,6 +43,7 @@ export const Login = ({ setUser, setSecret }) => {
 
   return (
     <div className="login-page">
+      {/* <div>Hello</div> */}
       <div className="login-container">
         <h2 className="title">Chat App</h2>
 
@@ -54,7 +56,7 @@ export const Login = ({ setUser, setSecret }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            className="login-input"
+            className="login-input "
             type="password"
             placeholder="Password"
             value={password}

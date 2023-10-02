@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
 
 $gray-300: #a3a3a3;
 $gray-400: #858585;
@@ -13,7 +13,59 @@ $secondary-800: #00b5e0;
 $tertiary-50: #fff8e6;
 $tertiary-100: #fff1cd;
 $quaternary-500: #fb8500;
-$alert: #f03f20;
+
+$alert: #ea384c;
+
+/* new theme */
+$violet-500: #6c2ef2;
+$violet-600: #5a24c7;
+$violet-700: #2c2559;
+$violet-800: #252140;
+$colors-primary-dark: #232326;
+
+/* new  theme*/
+
+$colors-primary-dark: #100919;
+$colors-outline: #1f0f48;
+$colors-primary-purple: #8c20f8;
+$colors-primary-violet: #7e12ff;
+
+$colors-primary-violet_12: #7e12ff1f;
+$colors-secondary-plum-1: #6c4df7;
+$colors-secondary-plum-2: #4d9ff7;
+$colors-secondary-plum-3: #15b0bd;
+$colors-secondary-plum-4: #40cda0;
+$colors-secondary-plum-5: #85e1a2;
+$colors-secondary-brick: #cd552c;
+$colors-secondary-sunny: #ffc333;
+$colors-secondary-gold: #ffe540;
+$colors-secondary-dark-violet: #6108cc;
+$colors-secondary-grass: #89d229;
+$colors-secondary-niagara: #4d72f7;
+$colors-white: #ffffff;
+$colors-grey-10: #f6f6f8;
+$colors-grey-10_06: #f6f6f80f;
+$colors-grey-50: #f0f1f5;
+$colors-grey-100: #eaebef;
+$colors-grey-150: #dfe1e6;
+$colors-grey-200: #ced0d7;
+$colors-grey-300: #bdbfc7;
+$colors-grey-400: #9ea0a8;
+$colors-grey-500: #7c7f87;
+$colors-grey-600: #575961;
+$colors-grey-700: #41434a;
+$colors-grey-800: #292a30;
+$colors-grey-900: #1c1d21;
+$colors-dark-10: #646672;
+$colors-dark-20: #5b5c69;
+$colors-dark-30: #525260;
+$colors-dark-40: #4a4957;
+$colors-dark-50: #41404e;
+$colors-dark-60: #383645;
+$colors-dark-70: #302d3c;
+$colors-dark-80: #282433;
+$colors-dark-90: #1f1b2a;
+$colors-dark-100: #171221;
 
 html,
 body,
@@ -24,7 +76,10 @@ body,
   margin: 0;
   padding: 0;
 
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Hind', sans-serif;
+
+  // font-family: 'Rubik', sans-serif;
+  background-color: $colors-primary-dark;
 }
 
 .layout {
@@ -48,77 +103,85 @@ body,
   height: 15px !important;
 }
 
-.login-page {
-  background-color: $primary-500;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Login */
 
-.login-container {
-  color: $tertiary-50;
-}
+// .login-page {
+//   background-color: $primary-500;
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.login-container .title {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+// .login-container {
+//   color: $tertiary-50;
+// }
 
-.login-actions {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 40px;
+// .login-container .title {
+//   display: flex;
+//   justify-content: center;
+//   font-size: 30px;
+//   font-weight: 700;
+//   margin-bottom: 20px;
+// }
 
-  margin: 10px 0;
-}
+// .login-actions {
+//   box-sizing: border-box;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   height: 40px;
 
-.login-actions > button {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 5px;
+//   margin: 10px 0;
+// }
 
-  color: $tertiary-50;
-  font-size: medium;
+// .login-actions > button {
+//   width: 100%;
+//   height: 100%;
+//   border: none;
+//   border-radius: 5px;
 
-  background-color: $secondary-500;
-  cursor: pointer;
+//   color: $tertiary-50;
+//   font-size: medium;
 
-  &:hover {
-    background-color: $secondary-800;
-  }
-}
+//   background-color: $secondary-500;
+//   cursor: pointer;
 
-.login-input {
-  box-sizing: border-box;
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin: 10px 0;
-  background-color: $primary-600;
-  color: $tertiary-50;
-}
+//   &:hover {
+//     background-color: $secondary-800;
+//   }
+// }
 
-.register-change {
-  text-align: right;
-  text-decoration: underline;
-  color: $secondary-500;
-}
+// .login-input {
+//   box-sizing: border-box;
+//   width: 100%;
+//   height: 40px;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 0 10px;
+//   margin: 10px 0;
+//   background-color: $primary-600;
+//   color: $tertiary-50;
+// }
 
-.register-change:hover {
-  text-decoration: underline;
-  color: $tertiary-100;
-  cursor: pointer;
-}
+// .register-change {
+//   text-align: right;
+//   text-decoration: underline;
+//   color: $secondary-500;
+// }
+
+// .register-change:hover {
+//   text-decoration: underline;
+//   color: $tertiary-100;
+//   cursor: pointer;
+// }
+
+// .error-message {
+//   color: $alert;
+//   font-size: '1.2rem';
+//   text-align: 'center';
+// }
 
 /* Chat Styling */
 .ce-chat-engine {
@@ -581,10 +644,4 @@ body,
 
 ::-webkit-scrollbar-track:hover {
   background: $primary-700;
-}
-
-.error-message {
-  color: $alert;
-  font-size: '1.2rem';
-  text-align: 'center';
 }
